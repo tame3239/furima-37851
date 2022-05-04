@@ -1,24 +1,50 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+｜ Colum               | Type    | Options                   |
+｜ ------------------- | ------- | ------------------------- |
+｜ nickname            | string  | null: false               |
+｜ email               | string  | null: false, unique: true |
+｜ password            | string  | null: false               |
+｜ first_name          | string  | null: false               |
+｜ last_name           | string  | null: false               |
+｜ first_name_katakana | string  | null: false               |
+｜ last_name_katakana  | string  | null: false               |
+｜ birth_year          | integer | null: false               |
+｜ birth_months        | integer | null: false               |
+｜ birth_day           | integer | null: false               |
 
-* Ruby version
+## itemsテーブル
 
-* System dependencies
+｜ Colum              | Type       | Options                        |
+｜ ------------------ | ---------- | ------------------------------ |
+｜ name               | string     | null: false                    |
+｜ explanation        | text       | null: false                    |
+｜ category           | integer    | null: false                    |
+｜ item_condition     | integer    | null: false                    |
+｜ payer              | integer    | null: false                    |
+｜ shipping_area      | integer    | null: false                    |
+｜ waiting_days       | integer    | null: false                    |
+｜ price              | integer    | null: false                    |
+｜ user               | references | null: false, foreign_key: true |
 
-* Configuration
+## purchasesテーブル
 
-* Database creation
+｜ Colum              | Type       | Options                        |
+｜ ------------------ | ---------- | ------------------------------ |
+｜ item               | references | null: false, foreign_key: true |
+｜ user               | references | null: false, foreign_key: true |
 
-* Database initialization
+## destinationsテーブル
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+｜ Colum              | Type       | Options                        |
+｜ ------------------ | ---------- | ------------------------------ |
+｜ post_code          | string     | null: false                    |
+｜ prefectures        | integer    | null: false                    |
+｜ city               | string     | null: false                    |
+｜ address            | string     | null: false                    |
+｜ telephone_number   | string     | null: false                    |
+｜ building           | string     | null: false                    |
+｜ user               | references | null: false, foreign_key: true |
+｜ purchase           | references | null: false, foreign_key: true |
