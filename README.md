@@ -2,18 +2,20 @@
 
 ## users テーブル
 
-｜ Colum               | Type    | Options                   |
-｜ ------------------- | ------- | ------------------------- |
-｜ nickname            | string  | null: false               |
-｜ email               | string  | null: false, unique: true |
-｜ password            | string  | null: false               |
-｜ first_name          | string  | null: false               |
-｜ last_name           | string  | null: false               |
-｜ first_name_katakana | string  | null: false               |
-｜ last_name_katakana  | string  | null: false               |
-｜ birth_year          | integer | null: false               |
-｜ birth_months        | integer | null: false               |
-｜ birth_day           | integer | null: false               |
+｜ Colum               | Type     | Options                   |
+｜ ------------------- | -------- | ------------------------- |
+｜ nickname            | string   | null: false               |
+｜ email               | string   | null: false, unique: true |
+｜ encrypted_password  | string   | null: false               |
+｜ first_name          | string   | null: false               |
+｜ last_name           | string   | null: false               |
+｜ first_name_katakana | string   | null: false               |
+｜ last_name_katakana  | string   | null: false               |
+｜ birthday            | datetime | null: false               |
+
+## Associations
+has_many :items
+has_many :purchases
 
 ## itemsテーブル
 
@@ -21,13 +23,17 @@
 ｜ ------------------ | ---------- | ------------------------------ |
 ｜ name               | string     | null: false                    |
 ｜ explanation        | text       | null: false                    |
-｜ category           | integer    | null: false                    |
-｜ item_condition     | integer    | null: false                    |
-｜ payer              | integer    | null: false                    |
-｜ shipping_area      | integer    | null: false                    |
-｜ waiting_days       | integer    | null: false                    |
+｜ category_id        | integer    | null: false                    |
+｜ item_condition_id  | integer    | null: false                    |
+｜ payer_id           | integer    | null: false                    |
+｜ prefectures_id     | integer    | null: false                    |
+｜ waiting_days_id    | integer    | null: false                    |
 ｜ price              | integer    | null: false                    |
 ｜ user               | references | null: false, foreign_key: true |
+
+## Associations
+belongs_to :users
+has_one :purchases
 
 ## purchasesテーブル
 
@@ -36,15 +42,22 @@
 ｜ item               | references | null: false, foreign_key: true |
 ｜ user               | references | null: false, foreign_key: true |
 
+## Associations
+belongs_to :users
+belongs_to :items
+has_one :destinations
+
 ## destinationsテーブル
 
 ｜ Colum              | Type       | Options                        |
 ｜ ------------------ | ---------- | ------------------------------ |
 ｜ post_code          | string     | null: false                    |
-｜ prefectures        | integer    | null: false                    |
+｜ prefectures_id     | integer    | null: false                    |
 ｜ city               | string     | null: false                    |
 ｜ address            | string     | null: false                    |
 ｜ telephone_number   | string     | null: false                    |
-｜ building           | string     | null: false                    |
-｜ user               | references | null: false, foreign_key: true |
+｜ building           | string     |                                |
 ｜ purchase           | references | null: false, foreign_key: true |
+
+## Associations
+belongs_to :purchases
