@@ -10,7 +10,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="15" value="users（ユーザー）" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#000000;" parent="1" vertex="1">
-                    <mxGeometry x="120" y="288" width="240" height="326" as="geometry"/>
+                    <mxGeometry x="120" y="288" width="240" height="266" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="nickname  string null: false " style="text;strokeColor=#000000;fillColor=#F0F0F0;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#000000;" parent="15" vertex="1">
                     <mxGeometry y="26" width="240" height="30" as="geometry"/>
@@ -33,14 +33,8 @@
                 <mxCell id="19" value="last_name_katakana  string  null:false" style="text;strokeColor=#000000;fillColor=#F0F0F0;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#000000;" parent="15" vertex="1">
                     <mxGeometry y="206" width="240" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="birth_year   integer  null:false" style="text;strokeColor=#000000;fillColor=#F0F0F0;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#000000;" parent="15" vertex="1">
+                <mxCell id="23" value="birthday   date  null:false" style="text;strokeColor=#000000;fillColor=#F0F0F0;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#000000;" parent="15" vertex="1">
                     <mxGeometry y="236" width="240" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" value="birth_months   integer  null:false" style="text;strokeColor=#000000;fillColor=#F0F0F0;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#000000;" parent="15" vertex="1">
-                    <mxGeometry y="266" width="240" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" value="birth_day   integer   null:false" style="text;strokeColor=#000000;fillColor=#F0F0F0;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#000000;" parent="15" vertex="1">
-                    <mxGeometry y="296" width="240" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="54" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="26" target="38" edge="1">
                     <mxGeometry relative="1" as="geometry">

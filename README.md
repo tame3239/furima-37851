@@ -11,7 +11,7 @@
 ｜ last_name           | string   | null: false               |
 ｜ first_name_katakana | string   | null: false               |
 ｜ last_name_katakana  | string   | null: false               |
-｜ birthday            | datetime | null: false               |
+｜ birthday            | date     | null: false               |
 
 ## Associations
 has_many :items
@@ -32,8 +32,8 @@ has_many :purchases
 ｜ user               | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :users
-has_one :purchases
+belongs_to :user
+has_one :purchase
 
 ## purchasesテーブル
 
@@ -43,9 +43,9 @@ has_one :purchases
 ｜ user               | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :users
-belongs_to :items
-has_one :destinations
+belongs_to :user
+belongs_to :item
+has_one :destination
 
 ## destinationsテーブル
 
@@ -60,4 +60,4 @@ has_one :destinations
 ｜ purchase           | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :purchases
+belongs_to :purchase
