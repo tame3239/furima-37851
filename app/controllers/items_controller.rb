@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :damedayo_edit, except: [:index, :show]
+  before_action :set_item, only: [:show, :edit, :update, :damedayo_edit]
+  before_action :damedayo_edit, only: [:edit, :update]
 
   def index
     @items = Item.order('created_at DESC')
@@ -20,15 +21,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
     if @item.save
       redirect_to item_path(@item.id), method: :get
@@ -45,8 +43,11 @@ class ItemsController < ApplicationController
   end
 
   def damedayo_edit
-    @item = Item.find(params[:id])
-    @user = @item.user
-    redirect_to(root_path) unless @user == current_user
+    redirect_to(root_path) unless @item.user.id == current_user.id
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
