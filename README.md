@@ -35,7 +35,7 @@ has_many :purchases
 belongs_to :user
 has_one :purchase
 
-## purchasesテーブル
+## ordersテーブル
 
 ｜ Colum              | Type       | Options                        |
 ｜ ------------------ | ---------- | ------------------------------ |
@@ -45,9 +45,9 @@ has_one :purchase
 ## Associations
 belongs_to :user
 belongs_to :item
-has_one :destination
+has_one :address
 
-## destinationsテーブル
+## addressesテーブル
 
 ｜ Colum              | Type       | Options                        |
 ｜ ------------------ | ---------- | ------------------------------ |
@@ -60,4 +60,4 @@ has_one :destination
 ｜ purchase           | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :purchase
+belongs_to :order
