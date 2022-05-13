@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
   before_action :damedayo_orders
-
+  before_action :damedayo_another
+  
   def index
     @order_address = OrderAddress.new
   end
@@ -42,5 +43,9 @@ class OrdersController < ApplicationController
 
   def damedayo_orders
     redirect_to root_path if current_user.id == @item.user.id
+  end
+
+  def damedayo_another
+    redirect_to(root_path) unless @item.user.id == current_user.id
   end
 end
