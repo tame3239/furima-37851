@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :waiting_days
   belongs_to :user
   has_one_attached :image
+  has_one :order
 
   validates :category_id, :item_condition_id, :payer_id, :prefectures_id, :waiting_days_id,
             numericality: { other_than: 1, message: "can't be blank" }
