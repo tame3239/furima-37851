@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
-  before_action :damedayo_orders
+  before_action :sold_out
   before_action :damedayo_another
-  
+
   def index
     @order_address = OrderAddress.new
   end
@@ -41,8 +41,10 @@ class OrdersController < ApplicationController
     )
   end
 
-  def damedayo_orders
-    redirect_to root_path if current_user.id == @item.user.id
+  def sold_out
+    if @item.order.present?
+      redirect_to root_path
+    end
   end
 
   def damedayo_another
