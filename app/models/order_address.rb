@@ -3,7 +3,7 @@ class OrderAddress
   attr_accessor :post_code, :prefectures_id, :city, :address, :telephone_number, :building, :user_id, :item_id, :token
 
   with_options presence: true do
-    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
+    validates :post_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "はハイフン(-)を含めて入力してください" }
     validates :prefectures_id
     validates :city
     validates :address
@@ -12,8 +12,8 @@ class OrderAddress
     validates :item_id
     validates :token
   end
-  validates :prefectures_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :telephone_number, format: { with: /\A\d{10,11}\z/ }
+  validates :prefectures_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :telephone_number, format: { with: /\A\d{10,11}\z/, message: "は10桁〜11桁の半角数字で入力してください"}
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
     Address.create(post_code: post_code, prefectures_id: prefectures_id, city: city, address: address,
