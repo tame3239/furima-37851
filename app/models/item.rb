@@ -10,11 +10,8 @@ class Item < ApplicationRecord
   has_one :order
 
   validates :category_id, :item_condition_id, :payer_id, :prefectures_id, :waiting_days_id,
-            numericality: { other_than: 1, message: "can't be blank" }
+            numericality: { other_than: 1, message: "を選択してください" }
   validates :name, :explanation, :price, :image, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message:"300以上、9999999以下の半角数字を入力してください" }
 
-  # with_options presence: true, format: { with: /\A[0-9]+\z/, message: 'Input half-width characters' } do
-  #   validates :price
-  # end
 end
