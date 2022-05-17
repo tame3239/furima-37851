@@ -231,3 +231,10 @@
   border-radius: 100px;
   margin-bottom: 2vh;
 }
+
+.comment-login {
+  text-align:center;
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px 0px;
+}
