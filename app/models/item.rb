@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_one :order
+  has_many :comments
 
   validates :category_id, :item_condition_id, :payer_id, :prefectures_id, :waiting_days_id,
             numericality: { other_than: 1, message: "を選択してください" }

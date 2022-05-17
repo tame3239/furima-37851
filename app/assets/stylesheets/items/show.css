@@ -205,3 +205,29 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comment{
+  display: flex;
+}
+
+.comment p{
+   margin: 0;
+}
+
+.user-info{
+  color: gray;
+  font-weight: bold;
+}
+
+.comment-info {
+  text-align:center;
+  line-height: 48px;
+  background-color: #f4a112;
+  border: 1px solid #f4a112;
+  color: #fff;
+  width: 20%;
+  min-width: 200px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
