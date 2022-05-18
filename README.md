@@ -1,6 +1,6 @@
 # テーブル設計
 
-## users テーブル
+## usersテーブル
 
 ｜ Colum               | Type     | Options                   |
 ｜ ------------------- | -------- | ------------------------- |
@@ -14,9 +14,9 @@
 ｜ birthday            | date     | null: false               |
 
 ## Associations
-has_many :items
-has_many :orders
-has_many :comments
+＊has_many :items
+＊has_many :orders
+＊has_many :comments
 
 ## itemsテーブル
 
@@ -33,9 +33,9 @@ has_many :comments
 ｜ user               | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :user
-has_one :order
-has_many :comments
+＊belongs_to :user
+＊has_one :order
+＊has_many :comments
 
 ## ordersテーブル
 
@@ -45,9 +45,9 @@ has_many :comments
 ｜ user               | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :user
-belongs_to :item
-has_one :address
+＊belongs_to :user
+＊belongs_to :item
+＊has_one :address
 
 ## addressesテーブル
 
@@ -62,7 +62,7 @@ has_one :address
 ｜ oder               | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :order
+＊belongs_to :order
 
 ## commentsテーブル
 
@@ -73,5 +73,5 @@ belongs_to :order
 ｜ item               | references | null: false, foreign_key: true |
 
 ## Associations
-belongs_to :user
-belongs_to :item
+＊belongs_to :user
+＊belongs_to :item
